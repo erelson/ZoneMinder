@@ -11,7 +11,7 @@ These instructions are for a brand new ubuntu 15.04 system which does not have Z
 
 ::
 
-	sudo  add-apt-repository ppa:iconnor/zoneminder
+	sudo add-apt-repository ppa:iconnor/zoneminder
 	sudo apt-get update
 
 if you don't have mysql already installed:
@@ -77,7 +77,7 @@ We also need to install php5-gd (as of 1.28.107, this is not installed)
 
 Look for [Date] and inside it you will see a date.timezone
 that is commented. remove the comment and specific your timezone.
-Please make sure the timezone is valid (see this: http://php.net/manual/en/timezones.php)
+Please make sure the timezone is valid (see: http://php.net/manual/en/timezones.php)
 
 In my case:
 
@@ -141,6 +141,7 @@ If it responds with something like:
 **Then your APIs are working**
 
 Make sure ZM and APIs work with security:
+
 1. Enable OPT_AUTH in ZM
 2. Log out of ZM in browser
 3. Open a NEW tab in the SAME BROWSER (important) and go to ``http://localhost/zm/api/host/getVersion.json`` - should give you "Unauthorized" along with a lot more of text
@@ -158,7 +159,7 @@ Easy Way: Install ZoneMinder from a package (Ubuntu 14.x)
 
 ::
 
-	sudo  add-apt-repository ppa:iconnor/zoneminder
+	sudo add-apt-repository ppa:iconnor/zoneminder
 	sudo apt-get update
 	sudo apt-get install zoneminder
 
@@ -224,10 +225,13 @@ We also need to install php5-gd (as of 1.28.107, this is not installed)
 
 **Step 6**: Edit Timezone in PHP
 
-``sudo vi /etc/php5/apache2/php.ini``
+::
+
+        sudo vi /etc/php5/apache2/php.ini
+
 Look for [Date] and inside it you will see a date.timezone
 that is commented. remove the comment and specific your timezone.
-Please make sure the timezone is valid (see [this](http://php.net/manual/en/timezones.php))
+Please make sure the timezone is valid (see: http://php.net/manual/en/timezones.php)
 
 In my case:
 
@@ -267,10 +271,12 @@ If it responds with something like:
 Then your APIs are working
 
 Make sure you can view Monitor View:
-1. Open up ZM, configure your monitors and verify you can view Monitor feeds. 
+
+1. Open up ZM (http://localhost/zm), configure your monitors and verify you can view Monitor feeds. 
 2. If not, open up ZM console in your browser, go to ``Options->Path`` and make sure ``PATH_ZMS`` is set to ``/zm/cgi-bin/nph-zms`` and restart ZM (you should not need to do this for packages, as this should automatically work)
 
 Make sure ZM and APIs work with security:
+
 1. Enable OPT_AUTH in ZM
 2. Log out of ZM in browser
 3. Open a NEW tab in the SAME BROWSER (important) and go to ``http://localhost/zm/api/host/getVersion.json`` - should give you "Unauthorized" along with a lot more of text
@@ -347,7 +353,9 @@ This should now create a bunch of .deb files
 
 **Step 6:** Fix PHP TimeZone
 
-``sudo vi /etc/php5/apache2/php.ini`` 
+::
+
+        sudo vi /etc/php5/apache2/php.ini
 
 Look for [Date] and inside it you will see a date.timezone that is commented. remove the comment and specific your timezone. Please make sure the timezone is valid (see http://php.net/manual/en/timezones.php)
 
